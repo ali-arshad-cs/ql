@@ -27,7 +27,8 @@
         <% post.documents.each do |document| %>
 
         <td>
-          <%= link_to document.file_filename, attachment_url(document, :file) %>
+          <%= image_tag(attachment_url(document, :file, :fit, 100, 100, host: request.base_url)) %>
+          <%#= link_to document.file_filename, attachment_url(document, :file) %>
         </td>
         <% end %>
         <td>

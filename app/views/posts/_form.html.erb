@@ -24,7 +24,8 @@
       <!--</div>-->
       <div class="form-group">
         <%= form.label :documents_files, "Documents" %>
-        <%= form.attachment_field :documents_files, multiple: true %>
+        <%= form.attachment_field :documents_files, multiple: true, presigned: true, host: request.base_url %>
+        <%#= form.attachment_field :documents_files, multiple: true %>
         <%= field_errors(@post, :documents_files) %>
       </div>
 
