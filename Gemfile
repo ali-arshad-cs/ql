@@ -12,6 +12,7 @@ gem "coffee-rails", "~> 4.1.0"
 gem "twitter-bootstrap-rails"
 
 gem "jquery-rails"
+gem 'devise'
 
 group :development, :test do
   gem "pry-rails"
@@ -19,4 +20,3 @@ group :development, :test do
   gem "web-console", "~> 2.0"
   gem "spring"
 end
-

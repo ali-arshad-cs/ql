@@ -1,8 +1,8 @@
 <h1><%= @post.title %></h1>
 
 <p>
-  <%= link_to "Edit post", [:edit, @post], class: "btn btn-primary" %>
-  <%= link_to "Delete post", @post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to "Edit Patient", [:edit, @post], class: "btn btn-primary" %>
+  <%= link_to "Delete Patient", @post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </p>
 
 <p>
@@ -12,6 +12,8 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>DOB</th>
       <th>Filename</th>
       <th>Content type</th>
       <th>Size</th>
@@ -21,13 +23,12 @@
   <tbody>
     <% @post.documents.each do |document| %>
       <tr>
+        <th><%= @post.title  %></th>
+        <th><%= @post.body %></th>
         <th><%= link_to document.file_filename, attachment_url(document, :file) %></th>
         <th><%= document.file_content_type %></th>
         <th><%= number_to_human_size document.file_size %></th>
       </tr>
     <% end %>
   </tbody>
-
 </table>
-
-<%= simple_format @post.body %>
