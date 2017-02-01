@@ -12,4 +12,4 @@ aws = {
 Refile.cache = Refile::S3.new(prefix: "cache", **aws)
 Refile.store = Refile::S3.new(prefix: "store", **aws)
 
-Refile.cdn_host = "https://dg6q7ixvmjtcl.cloudfront.net"
+Refile.host = '//d3j2pv3e3ss0vp.cloudfront.net'
