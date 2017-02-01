@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     @post = Post.all
   end
@@ -8,11 +11,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def create
+
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to @post
     else
@@ -42,6 +47,6 @@ class PostsController < ApplicationController
 private
 
   def post_params
-    params.require(:post).permit(:title, :image, :body, documents_files: [])
+    params.require(:post).permit(:title, :image, :user_id,:body, documents_files: [])
   end
 end

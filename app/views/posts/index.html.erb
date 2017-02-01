@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @post.each do |post| %>
+    <% current_user.posts.each do |post| %>
       <tr>
         <td>
           <%= link_to post.title, post %>

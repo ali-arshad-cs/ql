@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
   has_many :documents, dependent: :destroy
 
   accepts_attachments_for :documents
+
+  belongs_to :user
+
+
 end

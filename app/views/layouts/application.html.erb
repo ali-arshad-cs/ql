@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>INWOOD Patient App</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">INWOOD Patient App</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><%= link_to "Home", :posts %></li> 
-            <li class="active"><%= link_to "Patients", :posts %></li>
-          </ul>
-        </div>
-      </nav>
-
-      <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-      <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-      <%= yield %>
+<head>
+  <title>INWOOD Patient App</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">INWOOD Patient App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", :posts %></li>
+        <li class="active"><%= link_to "Patients", :posts %></li>
+      </ul>
+      <div style="text-align: right">
+        <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary btn-sm' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger btn-sm' %>
+        <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+        <% end %>
+      </div>
     </div>
-  </body>
+  </nav>
+
+
+
+
+  <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+</div>
+</body>
 </html>
