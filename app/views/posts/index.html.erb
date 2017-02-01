@@ -31,8 +31,8 @@
         </td>
         <% end %>
         <td>
-          <%= link_to "Edit Patient", [:edit, post], class: "btn btn-primary" %>
-          <%= link_to "Delete Patient", post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          <%= link_to "Edit", [:edit, post], class: "btn btn-primary btn-sm" %>
+          <%= link_to "Del", post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
         </td>
       </tr>
     <% end %>
