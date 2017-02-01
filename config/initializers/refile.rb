@@ -1,7 +1,5 @@
 # config/initializers/refile.rb
 require "refile/s3"
-require 'yaml'
-
 
 aws = {
     access_key_id: "AKIAJVMKVJVEFDWORMZQ",
@@ -11,5 +9,3 @@ aws = {
 }
 Refile.cache = Refile::S3.new(prefix: "cache", **aws)
 Refile.store = Refile::S3.new(prefix: "store", **aws)
-
-Refile.host = '//d3j2pv3e3ss0vp.cloudfront.net'

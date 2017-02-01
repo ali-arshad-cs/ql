@@ -211,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   coffee-rails (~> 4.1.0)
   devise
   jquery-rails

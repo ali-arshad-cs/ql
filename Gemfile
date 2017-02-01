@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem "refile", require: "refile/rails", github: "refile/refile"
 gem "refile-mini_magick"
 gem "refile-s3"
-
+gem "aws-sdk"
 gem "rails", "4.2.3"
 gem "pg"
 gem "sass-rails", "~> 5.0"
