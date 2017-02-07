@@ -1,5 +1,8 @@
-class Post < ActiveRecord::Base
-  validates_presence_of :title
+class Patient < ActiveRecord::Base
+
+  resourcify
+
+  validates_presence_of :title, :body
 
   attachment :image, type: :image
 

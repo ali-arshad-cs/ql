@@ -1,6 +1,6 @@
 class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
+    create_table :patients do |t|
       t.string :title
       t.text :body
       t.string :image_id

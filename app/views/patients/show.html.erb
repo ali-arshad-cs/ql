@@ -1,0 +1,35 @@
+<h1><%= @patient.title %></h1>
+
+<p>
+  <%= link_to "Edit Patient", [:edit, @patient], class: "btn btn-primary btn-sm" %>
+  <%= link_to "Delete Patient", @patient, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+  <%= link_to "All Patients", patients_path ,:class=>"btn btn-info btn-sm" %>
+</p>
+
+<p>
+  <%= attachment_image_tag(@patient, :image, :fill, 200, 200) %>
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>DOB</th>
+      <th>Filename</th>
+      <th>Content type</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient.documents.each do |document| %>
+      <tr>
+        <th><%= @patient.title  %></th>
+        <th><%= @patient.dob %></th>
+        <th><%= link_to document.file_filename, attachment_url(document, :file) %></th>
+        <th><%= document.file_content_type %></th>
+        <th><%= number_to_human_size document.file_size %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

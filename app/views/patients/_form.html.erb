@@ -1,32 +1,32 @@
 <div class="row">
   <div class="col-md-8">
-    <%= form_for @post do |form| %>
+    <%= form_for @patient do |form| %>
       <div class="form-group">
         <%= form.label :name %>
         <%= form.text_field :title, class: "form-control" ,placeholder: "John Max" %>
-        <%= field_errors(@post, :title) %>
+        <%= field_errors(@patient, :title) %>
       </div>
 
         <div class="form-group">
           <%= form.label :dob %>
-          <%= form.text_field :body, class: "form-control", placeholder: "06/22/1990"%>
-          <%= field_errors(@post, :body) %>
+          <%= form.text_field :dob, class: "form-control", placeholder: "06/22/1990"%>
+          <%= field_errors(@patient, :dob) %>
         </div>
 
 
       <!--<div class="form-group">-->
         <!--<%#= form.label :image %>-->
         <!--<p>-->
-          <!--<%#= attachment_image_tag @post, :image, :fill, 60, 60 %>-->
+          <!--<%#= attachment_image_tag @patient, :image, :fill, 60, 60 %>-->
           <!--<%#= form.attachment_field :image %>-->
         <!--</p>-->
-        <!--<%#= field_errors(@post, :image) %>-->
+        <!--<%#= field_errors(@patient, :image) %>-->
       <!--</div>-->
       <div class="form-group">
         <%= form.label :documents_files, "Documents" %>
         <%= form.attachment_field :documents_files, multiple: true, presigned: true, host: request.base_url %>
         <%#= form.attachment_field :documents_files, multiple: true %>
-        <%= field_errors(@post, :documents_files) %>
+        <%= field_errors(@patient, :documents_files) %>
       </div>
 
       <div class="form-group">

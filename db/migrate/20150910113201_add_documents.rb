@@ -7,6 +7,6 @@ class AddDocuments < ActiveRecord::Migration
       t.string :file_size, null: false
       t.string :file_content_type, null: false
     end
-    add_foreign_key :documents, :posts
+    add_foreign_key :documents, :patients
   end
 end

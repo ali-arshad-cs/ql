@@ -11,6 +11,10 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.1.0"
 gem "twitter-bootstrap-rails"
 
+gem 'cancancan'
+gem 'rolify'
+
+gem 'rails_admin', '~> 1.0'
 gem "jquery-rails"
 gem 'devise'
 

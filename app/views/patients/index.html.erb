@@ -1,7 +1,7 @@
 <h2>Patients List </h2>
 
 <p>
-  <%= link_to "Add New Patient", :new_post, class: "btn btn-primary", role: "button" %>
+  <%= link_to "Add New Patient", :new_patient, class: "btn btn-primary", role: "button" %>
 </p>
 
 <table class="table table-bordered">
@@ -11,17 +11,17 @@
       <th>Name</th>
       <th>DOB</th>
       <th>Filename</th>
-      <th>EDIT/DEL</th>
+
     </tr>
   </thead>
   <tbody>
-    <% current_user.posts.each do |post| %>
+    <% current_user.patients.each do |post| %>
       <tr>
         <td>
           <%= link_to post.title, post %>
         </td>
         <td>
-          <%=  post.body %>
+          <%=  post.dob %>
         </td>
 
         <% post.documents.each do |document| %>
@@ -31,10 +31,7 @@
           <%= link_to document.file_filename, attachment_url(document, :file) %>
         </td>
         <% end %>
-        <td>
-          <%= link_to "Edit", [:edit, post], class: "btn btn-primary btn-sm" %>
-          <%= link_to "Del", post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
-        </td>
+
       </tr>
     <% end %>
   </tbody>
