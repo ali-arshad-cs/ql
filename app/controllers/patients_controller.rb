@@ -11,12 +11,11 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = current_user.posts.find(params[:id])
+    @patient = current_user.patients.find(params[:id])
   end
 
   def create
-
-    @patient = Patient.new(post_params)
+    @patient = Patient.new(patients_params)
     @patient.user_id = current_user.id
     if @patient.save
       redirect_to @patient
@@ -46,7 +45,7 @@ class PatientsController < ApplicationController
 
 private
 
-  def post_params
-    params.require(:post).permit(:title, :image, :user_id,:dob, documents_files: [])
+  def patients_params
+    params.require(:patient).permit(:title, :image, :user_id,:dob, documents_files: [])
   end
 end

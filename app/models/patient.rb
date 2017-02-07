@@ -2,7 +2,7 @@ class Patient < ActiveRecord::Base
 
   resourcify
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :dob
 
   attachment :image, type: :image
 
