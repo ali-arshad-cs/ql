@@ -9,9 +9,10 @@
   <tr>
     <th>Date</th>
     <th>QC's Done</th>
-    <th>Description</th>
+
     <th>User</th>
-    <th>Filename</th>
+    <th>Description</th>
+    <th>ScreenShot</th>
     <th>Del/Edit</th>
   </tr>
   </thead>
@@ -24,12 +25,13 @@
         <td>
           <%= post.qc_done %>
         </td>
-        <td>
-          <%= post.description %>
-        </td>
+
         <th>
           <%= post.user.email %>
         </th>
+        <td>
+          <%= post.description %>
+        </td>
         <% post.documents.each do |document| %>
             <td>
               <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
