@@ -23,10 +23,11 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   #config.show_gravatar true
 
-   config.model 'Patient' do
+   config.model 'Post' do
      list do
-       field :title
-       field :dob
+       field :date
+       field :qc_done
+       field :description
        field :user_id
      end
    end

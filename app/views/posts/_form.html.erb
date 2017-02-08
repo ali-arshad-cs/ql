@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @post do |form| %>
+      <div class="form-group">
+        <%= form.label :date %>
+        <%= form.text_field :date, class: "form-control" ,value: "2/00/2017" %>
+        <%= field_errors(@post, :date) %>
+      </div>
+
+        <div class="form-group">
+          <%= form.label :QC_Done %>
+          <%= form.text_field :qc_done, class: "form-control", placeholder: "300"%>
+          <%= field_errors(@post, :qc_done) %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: "form-control",size: "30x10", placeholder: "This is a sample text."%>
+          <%= field_errors(@post, :description) %>
+        </div>
+
+      <!--<div class="form-group">-->
+        <!--<%#= form.label :image %>-->
+        <!--<p>-->
+          <!--<%#= attachment_image_tag @post, :image, :fill, 60, 60 %>-->
+          <!--<%#= form.attachment_field :image %>-->
+        <!--</p>-->
+        <!--<%#= field_errors(@post, :image) %>-->
+      <!--</div>-->
+      <div class="form-group">
+        <%= form.label :documents_files, "Documents" %>
+        <%= form.attachment_field :documents_files, multiple: true, presigned: true, host: request.base_url %>
+        <%#= form.attachment_field :documents_files, multiple: true %>
+        <%= field_errors(@post, :documents_files) %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Create Post", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>

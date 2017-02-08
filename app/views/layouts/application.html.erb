@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clinica Milenio</title>
+  <title>ECL - QC</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -11,11 +11,11 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Clinica Milenio</a>
+        <a class="navbar-brand" href="#">ECL - QC</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Home", :patients %></li>
-        <li class="active"><%= link_to "All Patients", :patients %></li>
+        <li class="active"><%= link_to "Home", :posts %></li>
+        <li class="active"><%= link_to "Daily QC Log", :posts %></li>
       </ul>
       <div style="text-align: right">
         <% if user_signed_in? %>

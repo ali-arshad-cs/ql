@@ -1,0 +1,48 @@
+<h2>QC's List </h2>
+
+<p>
+  <%= link_to "Add New QC", :new_post, class: "btn btn-primary", role: "button" %>
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+
+      <th>Date</th>
+      <th>QC's Done</th>
+      <th>Description</th>
+      <th>Filename</th>
+<th>Del/Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.posts.each do |post| %>
+      <tr>
+        <td>
+          <%= link_to post.date, post %>
+        </td>
+        <td>
+          <%=  post.qc_done %>
+        </td>
+
+        <td>
+          <%=  post.description %>
+        </td>
+
+        <% post.documents.each do |document| %>
+
+        <td>
+
+          <%= link_to document.file_filename, attachment_url(document, :file) %>
+        </td>
+        <% end %>
+
+
+        <td>
+        <%= link_to "Edit Post", [:edit, post], class: "btn btn-primary btn-sm" %>
+        <%= link_to "Delete Post", post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

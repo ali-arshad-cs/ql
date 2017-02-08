@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207225337) do
+ActiveRecord::Schema.define(version: 20170208172635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "documents", force: :cascade do |t|
-    t.integer "patient_id",        null: false
+    t.integer "post_id",           null: false
     t.string  "file_id",           null: false
     t.string  "file_filename",     null: false
     t.string  "file_size",         null: false
     t.string  "file_content_type", null: false
   end
 
-  create_table "patients", force: :cascade do |t|
-    t.string   "title"
-    t.text     "dob"
+  create_table "posts", force: :cascade do |t|
+    t.string   "date"
+    t.text     "qc_done"
     t.string   "image_id"
     t.string   "image_filename"
     t.string   "image_content_type"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170207225337) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
+    t.text     "description"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -60,7 +61,6 @@ ActiveRecord::Schema.define(version: 20170207225337) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -73,5 +73,5 @@ ActiveRecord::Schema.define(version: 20170207225337) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
-  add_foreign_key "documents", "patients"
+  add_foreign_key "documents", "posts"
 end

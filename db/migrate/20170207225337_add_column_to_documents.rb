@@ -1,6 +1,6 @@
 class AddColumnToDocuments < ActiveRecord::Migration
   def change
-    rename_column :documents, :post_id, :patient_id
-    rename_column :patients, :body, :dob
+
+    rename_column :posts, :body, :dob
   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :patients
+  resources :posts
 
-  root to: "patients#index"
+  root to: "posts#index"
 end

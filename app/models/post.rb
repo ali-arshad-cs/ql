@@ -1,8 +1,8 @@
-class Patient < ActiveRecord::Base
+class Post < ActiveRecord::Base
 
   resourcify
 
-  validates_presence_of :title, :dob
+  validates_presence_of :date, :qc_done
 
   attachment :image, type: :image
 
