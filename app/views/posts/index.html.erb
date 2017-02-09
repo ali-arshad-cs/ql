@@ -14,8 +14,9 @@
     <th>Description</th>
 
     <th>Overtime</th>
-    <th>Del/Edit</th>
+
     <th>ScreenShot</th>
+    <th>Del/Edit</th>
   </tr>
   </thead>
   <tbody>
@@ -38,17 +39,20 @@
         <td>
           <%= post.overtime %>
         </td>
-        <% if current_user.id ==  post.user_id %>
+
         <td>
-          <%= link_to "Edit Post", [:edit, post], class: "btn btn-primary btn-sm" %>
-          <%= link_to "Delete Post", post, data: {method: "delete", confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
-        </td>
-            <% end %>
         <% post.documents.each do |document| %>
-            <td>
+
               <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
-            </td>
+
         <% end %>
+        </td>
+        <td>
+          <% if current_user.id ==  post.user_id %>
+              <%= link_to "Edit Post", [:edit, post], class: "btn btn-primary btn-sm" %>
+              <%= link_to "Delete Post", post, data: {method: "delete", confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+          <% end %>
+        </td>
       </tr>
   <% end %>
   </tbody>
