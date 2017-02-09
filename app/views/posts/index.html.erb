@@ -12,9 +12,10 @@
 
     <th>User</th>
     <th>Description</th>
-    <th>ScreenShot</th>
+
     <th>Overtime</th>
     <th>Del/Edit</th>
+    <th>ScreenShot</th>
   </tr>
   </thead>
   <tbody>
@@ -33,11 +34,7 @@
         <td>
           <%= post.description %>
         </td>
-        <% post.documents.each do |document| %>
-            <td>
-              <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
-            </td>
-        <% end %>
+
         <td>
           <%= post.overtime %>
         </td>
@@ -47,6 +44,11 @@
           <%= link_to "Delete Post", post, data: {method: "delete", confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
         </td>
             <% end %>
+        <% post.documents.each do |document| %>
+            <td>
+              <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
+            </td>
+        <% end %>
       </tr>
   <% end %>
   </tbody>

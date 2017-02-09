@@ -28,6 +28,7 @@ RailsAdmin.config do |config|
        field :date
        field :qc_done
        field :description
+       field :overtime
        field :user_id
      end
    end
