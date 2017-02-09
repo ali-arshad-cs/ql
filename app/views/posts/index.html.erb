@@ -13,6 +13,7 @@
     <th>User</th>
     <th>Description</th>
     <th>ScreenShot</th>
+    <th>Overtime</th>
     <th>Del/Edit</th>
   </tr>
   </thead>
@@ -37,6 +38,9 @@
               <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
             </td>
         <% end %>
+        <td>
+          <%= post.overtime %>
+        </td>
         <% if current_user.id ==  post.user_id %>
         <td>
           <%= link_to "Edit Post", [:edit, post], class: "btn btn-primary btn-sm" %>
