@@ -29,7 +29,7 @@ RailsAdmin.config do |config|
        field :qc_done
        field :description
        field :overtime
-       field :user_id
+       field :user
      end
    end
 

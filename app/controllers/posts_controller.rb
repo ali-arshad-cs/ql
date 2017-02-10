@@ -48,4 +48,5 @@ private
   def patients_params
     params.require(:post).permit(:date, :image,:description, :user_id,:overtime ,:qc_done, documents_files: [])
   end
+
 end
