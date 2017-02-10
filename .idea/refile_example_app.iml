@@ -129,6 +129,9 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.2.3, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.3, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.4, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk (v2.7.5, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v2.7.5, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-resources (v2.7.5, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.0.0, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.11, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.7.2, RVM: ruby-2.3.0 [ingwood]) [gem]" level="application" />
