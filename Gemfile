@@ -17,9 +17,6 @@ gem 'rolify'
 gem 'rails_admin', '~> 1.0'
 gem "jquery-rails"
 gem 'devise'
-gem 'will_paginate', '3.0.pre2'
-
-
 
 group :development, :test do
   gem "pry-rails"
