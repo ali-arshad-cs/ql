@@ -17,4 +17,5 @@
 /tmp
 .idea
 .rvmrc
-
+.idea/refile_example_app.iml
+.idea/workspace.xml

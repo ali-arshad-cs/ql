@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).paginate(page: params[:page],per_page: 30)
   end
 
   def new
