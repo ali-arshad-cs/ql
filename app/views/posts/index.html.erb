@@ -21,7 +21,7 @@
   </thead>
   <tbody>
   <% @posts.each do |post| %>
-      <tr>
+      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
         <td>
           <%= link_to post.date, post %>
         </td>
@@ -61,3 +61,14 @@
 <div style="text-align: center">
 <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
+
+
+<style>
+  table tr.oddrow {
+    background-color: ghostwhite;
+  }
+
+  table tr.evenrow {
+    background-color: #d9edf7;
+  }
+</style>
