@@ -1,8 +1,28 @@
 <h2>QC's List </h2>
 
-<p>
-  <%= link_to "Add New QC", :new_post, class: "btn btn-primary", role: "button" %>
-</p>
+
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Date 5/22/2017", class: "form-control" %>
+          <span class="input-group-btn">
+        <%= submit_tag "Search", :class => 'btn btn-default', :name => nil %>
+      </span>
+        </div><!-- /input-group -->
+      </div>
+      <div class="col-lg-4">
+        <div class="input-group">
+          <%= link_to "Add New QC", :new_post, class: "btn btn-primary", role: "button" %>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+<% end %>
+<br>
+
+
+
+
 
 <table class="table table-bordered">
   <thead>

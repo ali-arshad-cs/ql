@@ -12,5 +12,9 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
+  def self.search(search)
+    where("date ILIKE ?", "%#{search}%")
+  end
+
 
 end

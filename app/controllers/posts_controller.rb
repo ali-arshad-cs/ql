@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @posts = Post.all.order(created_at: :desc).paginate(page: params[:page],per_page: 30)
+    @posts = Post.all.order(created_at: :desc).paginate(page: params[:page],per_page: 30).search(params[:search])
   end
 
   def new
@@ -43,10 +43,14 @@ class PostsController < ApplicationController
     redirect_to :posts
   end
 
+
+
 private
 
   def patients_params
     params.require(:post).permit(:date, :image,:description, :user_id,:overtime ,:qc_done, documents_files: [])
   end
+
+
 
 end

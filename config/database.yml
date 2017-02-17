@@ -2,7 +2,7 @@ development:
   host: localhost
   adapter: postgresql
   encoding: unicode
-  database: example
+  database: qc_log
   pool: 5
   username: ali
   password: 12345678
@@ -11,7 +11,7 @@ production:
   host: localhost
   adapter: postgresql
   encoding: unicode
-  database: example
+  database: qc_log
   pool: 5
   username: ali
   password: 12345678
