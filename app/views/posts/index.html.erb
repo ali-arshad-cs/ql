@@ -1,6 +1,4 @@
 <h2>QC's List </h2>
-
-
 <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
     <div class="row">
       <div class="col-lg-4">
@@ -15,15 +13,14 @@
         <div class="input-group">
           <%= link_to "Add New QC", :new_post, class: "btn btn-primary", role: "button" %>
         </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
+      </div>
+      <div class="col-lg-4">
+        Highest QC in 1 day <b><span style="font-size: 18px"><%=  @posts.maximum(:qc_done) %></span></b>
+      </div>
+      <!-- /.col-lg-6 -->
     </div><!-- /.row -->
 <% end %>
 <br>
-
-
-
-
-
 <table class="table table-bordered">
   <thead>
   <tr>
@@ -45,27 +42,22 @@
         <td>
           <%= post.qc_done %>
         </td>
-
         <th>
           <%= post.user.email %>
         </th>
         <td>
           <%= post.description %>
         </td>
-
         <td>
           <%= post.overtime %>
         </td>
-
         <td>
-        <% post.documents.each do |document| %>
-
+          <% post.documents.each do |document| %>
               <%= link_to document.file_filename, attachment_url(document, :file), target: '_blank' %>
-
-        <% end %>
+          <% end %>
         </td>
         <td>
-          <% if current_user.id ==  post.user_id %>
+          <% if current_user.id == post.user_id %>
               <%= link_to "Edit Post", [:edit, post], class: "btn btn-primary btn-sm" %>
               <%= link_to "Delete Post", post, data: {method: "delete", confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
           <% end %>
@@ -74,12 +66,9 @@
   <% end %>
   </tbody>
 </table>
-
 <div style="text-align: center">
-<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
-
-
 <style>
   table tr.oddrow {
     background-color: ghostwhite;

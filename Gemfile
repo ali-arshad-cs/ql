@@ -10,7 +10,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.1.0"
 gem "twitter-bootstrap-rails"
-
+gem "awesome_print"
 gem 'cancancan'
 gem 'rolify'
 
@@ -20,8 +20,6 @@ gem 'devise'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 group :development, :test do
-  gem "pry-rails"
-  gem "pry-byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
 end
