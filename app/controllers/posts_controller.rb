@@ -31,9 +31,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(patients_params)
+      flash[:notice] = 'QC LOG was successfully updated.'
       redirect_to @post
     else
-      render :new
+      render :edit
     end
   end
 
