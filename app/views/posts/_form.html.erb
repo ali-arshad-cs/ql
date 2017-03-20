@@ -4,28 +4,28 @@
 
         <div class="form-group">
         <%= form.label :date %>
-        <%= form.text_field :date, class: "form-control" ,placeholder: "2/00/2017" %>
+        <%= form.text_field :date, class: "form-control" ,placeholder: "mm/dd/2017" %>
         <%= field_errors(@post, :date) %>
       </div>
 
         <div class="form-group">
           <%= form.label :QC_Done %>
-          <%= form.text_field :qc_done, class: "form-control", placeholder: "300"%>
+          <%= form.text_field :qc_done, class: "form-control", placeholder: "50" %>
           <%= field_errors(@post, :qc_done) %>
         </div>
 
 
         <div class="form-group">
           <%= form.label :overtime %>
-          <%= form.number_field :overtime, class: "form-control", placeholder: "4"%>
+          <%= form.number_field :overtime, class: "form-control", placeholder: "0"%>
           <%= field_errors(@post, :overtime) %>
         </div>
 
-        <div class="form-group">
-          <%= form.label :select_user %>
-          <%= form.collection_select(:user_id, User.all, :id, :email) %>
-          <%= field_errors(@post, :overtime) %>
-        </div>
+        <!--<div class="form-group">-->
+          <!--<%#= form.label :select_user %>-->
+          <!--<%#= form.collection_select(:user_id, User.all, :id, :email) %>-->
+          <!--<%#= field_errors(@post, :overtime) %>-->
+        <!--</div>-->
 
         <div class="form-group">
           <%= form.label :description %>
